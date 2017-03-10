@@ -14,7 +14,7 @@
     <header class="home-header">
       <div class="logo-div">
         <a href="index.html">
-          <img src="img/logo.png" class="logo" alt="">
+          <img src="img/logo.jpg" class="logo" alt="">
         </a>
       </div>
       <nav class="home-nav">
@@ -26,8 +26,9 @@
       <div class="font-div">
         <h1 class="font-heading center">Get Font Pair</h1>
         <div class="font-input">
-          <input type="text" name="fontName" id="fontName" class="font-field field" placeholder="Enter Font name you want to show your text " value="">
-          <button type="button" name="changeFontBtn " class="font-btn btn" id="changeFontBtn" onclick="fontPairing();" onkeypress="fontPairing();">Change Font</button>
+          <input type="text" name="fontName" id="fontName" class="font-field field" placeholder="Enter Font name to make pair" value="" oninput="makeChange()">
+          <button type="button" name="changeFontBtn " class="font-btn btn" id="changeFontBtn" onclick="fontPairing();" onkeypress="fontPairing();" disabled>Change Font</button>
+
         </div>
       </div>
       <p id="p1"></p>

@@ -15,8 +15,8 @@ body{
 }
 a{
   text-decoration: none;
-  color: #8807B8;
-  border-right: 1px solid #8807B8;
+  color: #A69D66;
+  border-right: 1px solid #A69D66;
   padding: 0 .5rem;
 }
 a:last-child{
@@ -43,8 +43,8 @@ a:last-child{
   margin-right: auto;
 }
 .logo{
-  width: 100px;
-  height: 80px;
+  width: 70px;
+  height: 50px;
 }
 
 .container{
@@ -71,7 +71,7 @@ a:last-child{
 }
 .arrayResult{
   width: 400px;
-  height: 300px;
+  height: 270px;
   margin: 0 auto;
   word-wrap: break-word;
   overflow-y: scroll;

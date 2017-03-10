@@ -1,3 +1,15 @@
+
+ function makeChange(){
+   if(document.getElementById("fontName").value == ""){
+     $('#changeFontBtn').attr('disabled','true');
+     document.getElementById("writtenHeading").innerHTML="";
+     document.getElementById("writtenText").innerHTML= "";
+     document.getElementById("result").innerHTML="";
+   }
+   else {
+     $('#changeFontBtn').removeAttr('disabled');
+   }
+ }
  var network= new brain.NeuralNetwork();
 var fonts = [
   "Cabin",
