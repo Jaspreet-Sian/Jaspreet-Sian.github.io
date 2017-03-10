@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, maximum-scale= 1.0">
+    <title>Convert Image</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Ubuntu' type="text/css">
+  </head>
+  <body>
+    <header class="home-header">
+      <div class="logo-div">
+        <a href="index.html">
+          <img src="img/logo.png" class="logo" alt="">
+        </a>
+      </div>
+      <nav class="home-nav">
+        <a href="fontLearning.html">Font Pairing</a>
+        <a href="convertImg.html">Convert Image</a>
+      </nav>
+    </header>
+    <div class="container">
+      <h1 class="main-heading center">Convert Image into array of bits</h1>
+      <!-- <h3 class="upload-title center">Upload an jpg image</h3> -->
+      <div class="upload-img">
+        <img id="image" src="/home/jaspreet/6 month Training/tasks/website/img/images.jpg">
+        <button type="button"  class="upld-btn btn" name="button" onclick="toArray();"> Convert</button>
+        <script src="js/convertArray.js"></script>
+
+      </div>
+    </div>
+    <div id="res" class="result flex-row" style="display: none;">
+      <div class="bit-div flex-column">
+        <h2>Bit Result</h2>
+        <p id="bitResult" class="arrayResult"></p>
+      </div>
+      <div class="int-div flex-column">
+        <h2>intensity Result</h2>
+        <p id="intensityResult" class="arrayResult"></p>
+      </div>
+    </div>
+  </body>
+</html>

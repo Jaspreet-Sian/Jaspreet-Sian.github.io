@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- reset css -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<style>
+    body{ background-color: ivory; }
+    #canvas{border:1px solid red;}
+</style>
+
+<script>
+$(function(){
+
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+    var image=new Image();
+    image.onload=function(){
+        ctx.drawImage(image,0,0);
+
+        // desaturation colors
+        var imgData=ctx.getImageData(0,0,canvas.width,canvas.height);
+        var data=imgData.data;
+
+        for(var i = 0; i < data.length; i += 4) {
+          var grayscale= 0.33*data[i]+0.5*data[i+1]+0.15*data[i+2];
+          data[i]=grayscale;
+          data[i+1]=grayscale;
+          data[i+2]=grayscale;
+        }
+
+        // write the modified image data
+        ctx.putImageData(imgData,0,0);
+
+    }
+    image.crossOrigin="anonymous";
+    image.src="/home/jaspreet/6 month Training/tasks/website/img/images.jpg";
+
+
+
+}); // end $(function(){});
+</script>
+
+</head>
+
+<body>
+    <canvas id="canvas" width=300 height=168></canvas>
+</body>
+</html>
