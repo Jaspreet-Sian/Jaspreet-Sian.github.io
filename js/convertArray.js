@@ -1,7 +1,7 @@
 
 
   var toArray = function() {
-    let img= document.getElementById("image");
+    let img= document.getElementById("Upldimage");
     let canvas= document.createElement("canvas");
     canvas.width = img.width;
     canvas.height = img.height;
@@ -9,8 +9,7 @@
     context.drawImage(img, 0, 0,canvas.width,canvas.height);
     canvas.crossOrigin = 'anonymous';
     let Data = context.getImageData(0,0,canvas.width,canvas.height).data;
-    var string = OCRAD(context);
-    alert("string");
+
     var getBit=[];
     var intensityArr=[], intensityBitArr=[], intensityBit;
     // let i=0;
