@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, intitial-scale= 1.0, maximum-scale= 1.0">
     <title>Font Training</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/brain-0.6.3.js"></script>
@@ -12,7 +13,7 @@
     <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family"> -->
   </head>
   <body>
-    <header class="home-header">
+    <header class="home-header flex-row">
       <div class="logo-div">
         <a href="index.html">
           <img src="img/logo.jpg" class="logo" alt="">
@@ -26,7 +27,7 @@
     <div class="container">
       <div class="font-div">
         <h1 class="font-heading center">Get Font Pair</h1>
-        <div class="font-input">
+        <div class="font-input flex-row">
           <input type="text" name="fontName" id="fontName" class="font-field field" placeholder="Enter Font name to make pair" value="" oninput="makeChange()">
           <button type="button" name="changeFontBtn " class="font-btn btn" id="changeFontBtn" onclick="fontPairing();" onkeypress="fontPairing();" disabled>Change Font</button>
 
