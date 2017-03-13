@@ -9,7 +9,7 @@
     context.drawImage(img, 0, 0,canvas.width,canvas.height);
     canvas.crossOrigin = 'anonymous';
     let Data = context.getImageData(0,0,canvas.width,canvas.height).data;
-
+//;lfsfld;fkl;sf
     var getBit=[];
     var intensityArr=[], intensityBitArr=[], intensityBit;
     // let i=0;
