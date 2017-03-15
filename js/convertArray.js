@@ -9,7 +9,12 @@
     context.drawImage(img, 0, 0,canvas.width,canvas.height);
     canvas.crossOrigin = 'anonymous';
     let Data = context.getImageData(0,0,canvas.width,canvas.height).data;
-//;lfsfld;fkl;sf
+    var arr={};
+    arr[0]="a";
+    arr[1]="b";
+    arr[2]="c";
+    arr[3]="d";
+    console.log(JSON.stringify(arr),"JSON Fommat");
     var getBit=[];
     var intensityArr=[], intensityBitArr=[], intensityBit;
     // let i=0;

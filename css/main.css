@@ -9,9 +9,8 @@ html,body{
   font-family: sans-serif;
 }
 body{
-  background: linear-gradient(to right bottom,#938844, #B8B184);
   color: #fff;
-  font-family: 'Ubuntu' , sans-serif;
+  font-family:  sans-serif;
 }
 a{
   text-decoration: none;
@@ -22,15 +21,23 @@ a{
 a:last-child{
   border-right: 0;
 }
+.main-container{
+  background: linear-gradient(to right bottom,#938844, #B8B184);
+  color: #fff;
+  font-family: 'Ubuntu' , sans-serif;
+  width: 100%;
+  height: 89%;
+}
+.wrapper,
 .home-wrapper{
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.home-wrapper{
   align-items: center;
 }
-.home-header{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.header-container{
   padding: 0.5rem 2rem;
   background-color: #fff;
 }
