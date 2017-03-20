@@ -1,5 +1,5 @@
 var intensityArr=[], intensityBitArr=[];
-var bitZeroPos=[], bitZeroArr=[];
+var bitZeroPos=[], bitZeroArr=[], outFont=[];
 var Data, imgData;
   function toArray(Upldimage) {
     imageToArr(Upldimage);
@@ -88,7 +88,7 @@ var AbyssinicaArr= intensityArr;
     console.log(intensityArr.length);
     for (let x = 0; x < intensityArr.length; x++) {
       // console.log(x * 4," ",(x + 4) - 1,"dddddddd");
-      if(intensityArr[x] < 0.9){
+      if(outFont[x] < 0.8){
         intensityArr[x] = getFontArr[x].toFixed(1);
         // findRGB(Data, intensityArr);
         // console.log(x, x * 4);
@@ -246,6 +246,7 @@ function canvasDraw(img, width, height){
 
   function runNetwork(inFontArr,outFontArr){
     var net = new brain.NeuralNetwork();
+    outFont = outFontArr;
       net.train([{input : bitZeroArr, output : outFontArr}],{
                   errorThresh : 0.05,
                   iterations : 20000,
