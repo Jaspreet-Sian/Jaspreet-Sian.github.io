@@ -12,19 +12,59 @@ var Data, imgData;
     // imageToArr(Upldimage);
     // createSingleArray(intensityBitArr);
     // displayData();
+
     let img= Upldimage;
+
     let img2= new Image();
     // img2.src= "img/font-lora1.jpg";
     img2.src= "img/font/Monospace.jpg";
     img2.width = 300;
-    img2.height= 200;
+    img2.height = 200;
     canvasDraw(img2, img2.width, img2.height);
 console.log(img);
 console.log(img2);
 // console.log(bitZeroPos,"pos");
 console.log(intensityArr,"bitArr");
   // var outFontPos= bitZeroPos;
-  var outFontArr= intensityArr;
+  var monospaceArr= intensityArr;
+
+  let img3= new Image();
+  // img2.src= "img/font-lora1.jpg";
+  img3.src= "img/font/sans.jpg";
+  img3.height= 200;
+  img3.width=300;
+  canvasDraw(img3, img3.width, img3.height);
+  console.log(img3);
+// console.log(img);
+// console.log(bitZeroPos,"pos");
+// console.log(intensityArr,"bitArr");
+// var outFontPos= bitZeroPos;
+var sansArr= intensityArr;
+
+let img4= new Image();
+// img2.src= "img/font-lora1.jpg";
+img4.src= "img/font/ubuntu.jpg";
+img4.width= 300;
+img4.height= 200;
+canvasDraw(img4, img4.width, img4.height);
+console.log(img4);
+// console.log(img2);
+// console.log(bitZeroPos,"pos");
+// console.log(intensityArr,"bitArr");
+// var outFontPos= bitZeroPos;
+var ubuntuArr= intensityArr;
+
+let img5= new Image();
+// img2.src= "img/font-lora1.jpg";
+img5.src= "img/font/Abyssinica-SIL.jpg";
+img5.width=300;
+img5.height=200;
+canvasDraw(img5, img5.width, img5.height);
+console.log(img5);
+// console.log(bitZeroPos,"pos");
+console.log(intensityArr,"bitArr");
+// var outFontPos= bitZeroPos;
+var AbyssinicaArr= intensityArr;
   // bitZeroArr=[];
   // bitZeroPos= [];
     canvasDraw(img, img.width, img.height);
@@ -42,19 +82,19 @@ console.log(intensityArr,"bitArr");
     document.getElementById("res").setAttribute("style"," display : flex; ");
     document.getElementById("bitResult").innerHTML= intensityBitArr;
     document.getElementById("intensityResult").innerHTML= intensityArr;
-    var getFontArr= runNetwork(inFontArr,outFontArr);
+    var getFontArr= runNetwork(inFontArr,monospaceArr);
     // getfontArr.toFixed(1);
     console.log(getFontArr,"neuralFont");
     console.log(intensityArr.length);
     for (let x = 0; x < intensityArr.length; x++) {
       // console.log(x * 4," ",(x + 4) - 1,"dddddddd");
-      if(outFontArr[x] < 0.8){
+      if(intensityArr[x] < 0.9){
         intensityArr[x] = getFontArr[x].toFixed(1);
         // findRGB(Data, intensityArr);
         // console.log(x, x * 4);
         for(i = x * 4; i < (x * 4) + 3; i++){
             // console.log(Data[i],">>>>");
-            Data[i]= Math.ceil(intensityArr[x] * 255);
+            Data[i]= Math.ceil(intensityArr[x] * 128);
             // console.log(Data[i],"4444");
         }
       }
