@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/logo.jpg">
     <script src="js/common.js"></script>
-    <script src="js/ocrad.js"></script>
+    <script src="js/brain.js"></script>
+    <!-- <script src="js/browser.js"></script> -->
+    <script src="js/font-training.js"></script>
+    <script src="js/imgToArr.js"></script>
+    <!-- <script src="js/rnn.js"></script> -->
+    <!-- <script src="js/browser.js"></script> -->
   </head>
   <body>
     <header class="header-container" include-html="header.html">
@@ -16,16 +21,18 @@
       includeHTML();
     </script>
     <main class="wrapper main-container">
+      <div class="main-wrapper">
+
         <div class="container">
           <h1 class="main-heading center">Get Font By training neural network</h1>
           <!-- <h3 class="upload-title center">Upload an jpg image</h3> -->
           <div class="upload-img flex-row">
-            <img id="Upldimage" class="image" src="img/img.jpg">
-            <button type="button"  class="upld-btn btn" name="button" onclick="toArray();"> Convert</button>
-            <script src="js/convertArray.js"></script>
-
+            <img id="Upldimage1" class="image" src="img/font/ubuntu.jpg">
+            <!-- <img id="Upldimage1" class="image" src="img/font.jpg"> -->
+            <button type="button" class="upld-btn btn" name="button" onclick="getFont(document.getElementById('Upldimage1'));"> Convert</button>
           </div>
         </div>
+
         <div id="res" class="result flex-row" style="display: none;">
           <div class="bit-div flex-column">
             <h2>Bit Result</h2>
@@ -35,7 +42,16 @@
             <h2>Intensity Result</h2>
             <p id="intensityResult" class="arrayResult"></p>
           </div>
+          <div class="font-img">
+            <h2>Font Match Result</h2>
+            <canvas id="canvas1" width="300" height="300"></canvas>
+          </div>
         </div>
+      </div>
     </main>
+    <script src="js/font-training.js"></script>
+    <script type="text/javascript">
+      // runNetwork();
+    </script>
   </body>
 </html>

@@ -57,7 +57,8 @@ network.train([
       var getFontCode= fontIndex/fonts.length;
       var fontCode = {fontCode: getFontCode}
       var txt = getFont(fontCode);
-      console.log(txt);
+      console.log(txt,"chhs");
+      console.log("chlda");
       results.push(fonts[fontIndex] + " : "  + txt);
       result.setAttribute("class"," ");
       result.innerHTML = results.join("<br>");

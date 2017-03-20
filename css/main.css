@@ -28,6 +28,9 @@ a:last-child{
   width: 100%;
   height: 89%;
 }
+.main-wrapper{
+  overflow-y: auto;
+}
 .wrapper,
 .home-wrapper{
   display: flex;
