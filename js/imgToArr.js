@@ -86,9 +86,9 @@ var AbyssinicaArr= intensityArr;
     // getfontArr.toFixed(1);
     console.log(getFontArr,"neuralFont");
     console.log(intensityArr.length);
-    for (let x = 0; x < intensityArr.length; x++) {
+    for (let x = 0; x < getFontArr.length; x++) {
       // console.log(x * 4," ",(x + 4) - 1,"dddddddd");
-      if(outFont[x] < 0.8){
+      if(getFontArr[x] < 0.7){
         intensityArr[x] = getFontArr[x].toFixed(1);
         // findRGB(Data, intensityArr);
         // console.log(x, x * 4);
