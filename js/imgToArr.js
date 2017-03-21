@@ -246,7 +246,6 @@ function canvasDraw(img, width, height){
 
   function runNetwork(inFontArr,outFontArr){
     var net = new brain.NeuralNetwork();
-    outFont = outFontArr;
       net.train([{input : bitZeroArr, output : outFontArr}],{
                   errorThresh : 0.05,
                   iterations : 20000,
