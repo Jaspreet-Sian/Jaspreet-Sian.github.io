@@ -80,8 +80,7 @@ var AbyssinicaArr= intensityArr;
     console.log(intensityArr);
     // document.getElementById("res").setAttribute("style"," ");
     document.getElementById("res").setAttribute("style"," display : flex; ");
-    // document.getElementById("bitResult").innerHTML= intensityBitArr;
-    // document.getElementById("intensityResult").innerHTML= intensityArr;
+    
     var getFontArr= runNetwork(inFontArr,monospaceArr);
     // getfontArr.toFixed(1);
     console.log(getFontArr,"neuralFont");
