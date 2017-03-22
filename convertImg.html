@@ -16,25 +16,27 @@
       includeHTML();
     </script>
     <main class="wrapper main-container">
-        <div class="container">
-          <h1 class="main-heading center">Convert Image into array of bits</h1>
-          <!-- <h3 class="upload-title center">Upload an jpg image</h3> -->
-          <div class="upload-img flex-row">
-            <img id="Upldimage" class="image" src="img/images.jpg">
-            <button type="button"  class="upld-btn btn" name="button" onclick="toArray(document.getElementById('Upldimage'));"> Convert</button>
+	<div class="main-wrapper">
+		<div class="container">
+		  <h1 class="main-heading center">Convert Image into array of bits</h1>
+		  <!-- <h3 class="upload-title center">Upload an jpg image</h3> -->
+		  <div class="upload-img flex-row">
+		    <img id="Upldimage" class="image" src="img/images.jpg">
+		    <button type="button"  class="upld-btn btn" name="button" onclick="toArray(document.getElementById('Upldimage'));"> Convert</button>
 
-          </div>
-        </div>
-        <div id="res" class="result flex-row" style="display: none;">
-          <div class="bit-div flex-column">
-            <h2>Bit Result</h2>
-            <p id="bitResult" class="arrayResult"></p>
-          </div>
-          <div class="int-div flex-column">
-            <h2>Intensity Result</h2>
-            <p id="intensityResult" class="arrayResult"></p>
-          </div>
-        </div>
+		  </div>
+		</div>
+		<div id="res" class="result flex-row" style="display: none;">
+		  <div class="bit-div flex-column">
+		    <h2>Bit Result</h2>
+		    <p id="bitResult" class="arrayResult"></p>
+		  </div>
+		  <div class="int-div flex-column">
+		    <h2>Intensity Result</h2>
+		    <p id="intensityResult" class="arrayResult"></p>
+		  </div>
+		</div>
+	</div>
     </main>
   </body>
 </html>
