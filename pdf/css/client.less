@@ -1,0 +1,150 @@
+html,
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Flex wrappper */
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-hcenter{
+  justify-content: center;
+}
+
+.flex-vcenter{
+  align-items: center;
+}
+
+.upld-wrapper{
+  height: 100%;
+  .flex-col;
+  .flex-hcenter;
+  .flex-vcenter;
+}
+
+.input-file{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.input-file + .input-label {
+    font-size: 1em;
+    font-weight: 700;
+    color: #d3394c;
+    background-color: #fff;
+    padding: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.input-file:focus + .input-label,
+.input-file.has-focus + .input-label,
+.input-file + .input-label:hover {
+    color: #722040;
+}
+
+.input-file + .input-label figure {
+    width: 40px;
+    height: 60px;
+    background-color: #d3394c;
+    display: block;
+    position: relative;
+    padding: 30px;
+    margin: 0 auto 10px;
+}
+
+.input-file:focus + .input-label figure,
+.input-file.has-focus + .input-label figure,
+.input-file + .input-label:hover figure {
+    background-color: #722040;
+    height: 60px;
+}
+
+.input-file + .input-label figure::before,
+.input-file + .input-label figure::after {
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.input-file + .input-label figure::before {
+    border-top: 35px solid #dfc8ca;
+    border-left: 35px solid #fff;
+}
+
+.input-file + .input-label figure::after {
+    border-bottom: 35px solid #722040;
+    border-right: 35px solid #fff;
+}
+
+.input-file:focus + .input-label figure::after,
+.input-file.has-focus + .input-label figure::after,
+.input-file + .input-label:hover figure::after {
+    border-bottom-color: #d3394c;
+}
+
+.input-file + .input-label svg {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6;
+}
+//////////////////////////
+/* Uploading msg */
+/////////////////////////
+.span-msg{
+  color: #722040;
+}
+///////////////////////////
+/* input-btn */
+//////////////////////////
+.input-btn{
+ .flex-row;
+ .flex-hcenter;
+}
+
+.btn{
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #d3394c;
+  border: 0;
+  margin: 10px;
+  line-height: 40px;
+}
+.btn:hover{
+  content: '';
+  background-color: #722040;
+}
+//////////////////////////
+/* Common classes */
+/////////////////////////
+.hidden{
+  display: none;
+}
+.center{
+  text-align: center;
+}
