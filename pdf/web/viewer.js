@@ -7684,7 +7684,7 @@ exports.ViewHistory = ViewHistory;
 "use strict";
 
 
-var DEFAULT_URL = 'home/jaspreet/Desktop/1885.pdf';
+var DEFAULT_URL = 'agilesoftwaredevelopment.pdf';
 ;
 var pdfjsWebApp;
 {
