@@ -58,7 +58,6 @@ $(function(){
   }
   });
   $(window).bind("mousewheel DOMMouseScroll",function(e){
-    alert("scroll");
       meaningTip.hide();
   });
   function hide(){
