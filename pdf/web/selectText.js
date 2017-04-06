@@ -14,6 +14,7 @@ $(function(){
     let feedText;
     if(getText.toString()){
       getText= $.trim(getText.toString());
+      getText= getText.replace(/^\s+|\s+$/g, "");
       feedText= getText.toString().toUpperCase();
       console.log('"' + getText.toString() + '"' + " are selected ");
     loadJSON(function(response) {
