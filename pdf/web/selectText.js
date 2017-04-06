@@ -9,6 +9,7 @@ $(function(){
                                            fixed: false,
                                            shadow: true});
   $('#viewerContainer').bind('mouseup', function(e){
+    e.preventDefault();
     meaningTip.hide();
     var getText= getSelectedText();
     let feedText;
@@ -30,7 +31,6 @@ $(function(){
               // Assuming json data is wrapped in square brackets as Drew suggests
               console.log(feedwords[i]);
               if(jsonresponse[feedwords[i]]){
-                // console.log(jsonresponse[feedText]);
                 definition +="<h3> Meaning of "+ getwords[i] + ":</h3> <p>" + jsonresponse[feedwords[i]] + "</p><br>";
               }
               else {
@@ -39,14 +39,6 @@ $(function(){
             }
             console.log(definition,"definition");
             meaningTip.setContent(definition);
-            // Assuming json data is wrapped in square brackets as Drew suggests
-            // if(jsonresponse[feedText]){
-            //   // console.log(jsonresponse[feedText]);
-            //   meaningTip.setContent("<h3> Meaning of "+ getText + ":</h3> <p>" + jsonresponse[feedText] + "</p>");
-            // }
-            // else {
-            //   meaningTip.setContent("we are unable to find definition of such word you have selected, Make sure your selected word is a proper word!");
-            // }
             meaningTip.show();
             definition="";
             feedText="";
