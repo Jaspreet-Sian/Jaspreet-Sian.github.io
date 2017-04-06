@@ -57,9 +57,14 @@ $(function(){
     });
   }
   });
-  $(window).bind("mousewheel DOMMouseScroll",function(e){
-      meaningTip.hide();
-  });
+  if(window.addEventListener)
+		document.addEventListener('DOMMouseScroll', hide, false);
+
+	//for IE/OPERA etc
+	document.onmousewheel = hide;
+  // $(window).bind("mousewheel DOMMouseScroll",function(e){
+  //     meaningTip.hide();
+  // });
   function hide(){
     meaningTip.hide();
   }
