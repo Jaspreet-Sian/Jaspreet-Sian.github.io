@@ -7684,7 +7684,7 @@ exports.ViewHistory = ViewHistory;
 "use strict";
 
 
-var DEFAULT_URL = 'agilesoftwaredevelopment.pdf';
+var DEFAULT_URL = '1885.pdf';
 ;
 var pdfjsWebApp;
 {

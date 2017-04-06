@@ -39,9 +39,11 @@ See https://github.com/adobe-type-tools/cmap-resources
 <script src="l10n.js"></script>
 <script src="../build/pdf.js"></script>
 
-
+    <script src="../js/jquery.js" type="text/javascript"></script>
     <script src="viewer.js"></script>
-
+    <script src="selectText.js" type="text/javascript"></script>
+    <script src="../js/opentip-jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../css/opentip.css">
   </head>
 
   <body tabindex="1" class="loadingInProgress">
@@ -252,8 +254,13 @@ See https://github.com/adobe-type-tools/cmap-resources
         </menu>
 
         <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
+          <!-- <div id="tooltipDiv" data-ot="oye balle balle" data-ot-delay="2" data-ot-style="dark" data-ot-stem=false data-ot-shadow=true data-ot-shadowBlur=8
+          data-ot-showOn="mouseup" data-ot-fixed=true  data-ot-hide-trigger="closeButton"> -->
+          <div id="tooltipDiv">
+            <div id="viewer" class="pdfViewer"></div>
+          </div>
         </div>
+
 
         <div id="errorWrapper" hidden='true'>
           <div id="errorMessageLeft">
@@ -354,6 +361,6 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
+
   </body>
 </html>
-
