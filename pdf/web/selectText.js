@@ -50,13 +50,14 @@ $(function(){
             definition="";
             feedText="";
             getText="";
-            setTimeout(hide,feedwords.length * 3000);
+            // setTimeout(hide,feedwords.length * 3000);
         }
       }
     });
   }
   });
   $(window).bind("mousewheel DOMMouseScroll",function(e){
+    alert("scroll");
       meaningTip.hide();
   });
   function hide(){
