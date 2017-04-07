@@ -8,14 +8,17 @@ $(function(){
                                            hideDelay: 0.9,
                                            fixed: false,
                                            shadow: true});
-  $('#viewerContainer').bind('mouseup', function(e){
+document.addEventListener("selectionchange", function() {
+//   console.log('Selection changed.');
+// });
+//   $('#viewerContainer').bind('mouseup', function(e){
 
     meaningTip.hide();
     var getText= getSelectedText();
     let feedText;
         if(getText.toString()){
           getText= $.trim(getText.toString());
-          // getText= getText.replace(/^\s+|\s+$/g, "");
+          getText= getText.replace(/^\s+|\s+$/g, "");
           feedText= getText.toString().toUpperCase();
           console.log('"' + getText.toString() + '"' + " are selected ");
         loadJSON(function(response) {
@@ -24,7 +27,6 @@ $(function(){
             // Do Something with the response e.g.
             jsonresponse = JSON.parse(response);
             getWords= getText.split(" ");
-            getWords= getWords.replace(/^\s+|\s+$/g,"");
             if(getWords.length < 6){
                 feedwords= feedText.split(" ");
                 console.log(feedwords.length);
