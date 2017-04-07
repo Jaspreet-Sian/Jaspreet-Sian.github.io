@@ -9,45 +9,47 @@ $(function(){
                                            fixed: false,
                                            shadow: true});
   $('#viewerContainer').bind('mouseup', function(e){
-    e.preventDefault();
+
     meaningTip.hide();
     var getText= getSelectedText();
     let feedText;
-    if(getText.toString()){
-      getText= $.trim(getText.toString());
-      getText= getText.replace(/^\s+|\s+$/g, "");
-      feedText= getText.toString().toUpperCase();
-      console.log('"' + getText.toString() + '"' + " are selected ");
-    loadJSON(function(response) {
-      let feedwords, getwords;
-      if(feedText){
-        // Do Something with the response e.g.
-        jsonresponse = JSON.parse(response);
-        getwords= getText.split(" ");
-        if(getwords.length < 6){
-            feedwords= feedText.split(" ");
-            console.log(feedwords.length);
-            for( let i = 0; i < feedwords.length; i++ ){
-              // Assuming json data is wrapped in square brackets as Drew suggests
-              console.log(feedwords[i]);
-              if(jsonresponse[feedwords[i]]){
-                definition +="<h3> Meaning of "+ getwords[i] + ":</h3> <p>" + jsonresponse[feedwords[i]] + "</p><br>";
-              }
-              else {
-                definition +="<h3> Meaning of "+ getwords[i] + ":</h3><p style='color : rgb(255,0,0);'>we are unable to find definition of such word you have selected, Make sure your selected word is a proper word! <p><br>";
-              }
+        if(getText.toString()){
+          getText= $.trim(getText.toString());
+          // getText= getText.replace(/^\s+|\s+$/g, "");
+          feedText= getText.toString().toUpperCase();
+          console.log('"' + getText.toString() + '"' + " are selected ");
+        loadJSON(function(response) {
+          let feedwords, getWords;
+          if(feedText){
+            // Do Something with the response e.g.
+            jsonresponse = JSON.parse(response);
+            getWords= getText.split(" ");
+            getWords= getWords.replace(/^\s+|\s+$/g,"");
+            if(getWords.length < 6){
+                feedwords= feedText.split(" ");
+                console.log(feedwords.length);
+                for( let i = 0; i < feedwords.length; i++ ){
+                  // Assuming json data is wrapped in square brackets as Drew suggests
+                  console.log(feedwords[i]);
+                  if(jsonresponse[feedwords[i]]){
+                    definition +="<h3> Meaning of "+ getWords[i] + ":</h3> <p>" + jsonresponse[feedwords[i]] + "</p><br>";
+                  }
+                  else {
+                    definition +="<h3> Meaning of "+ getWords[i] + ":</h3><p style='color : rgb(255,0,0);'>we are unable to find definition of such word you have selected, Make sure your selected word is a proper word! <p><br>";
+                  }
+                }
+                console.log(definition,"definition");
+                meaningTip.setContent(definition);
+                meaningTip.show();
+                definition="";
+                feedText="";
+                getText="";
+                // setTimeout(hide,feedwords.length * 3000);
             }
-            console.log(definition,"definition");
-            meaningTip.setContent(definition);
-            meaningTip.show();
-            definition="";
-            feedText="";
-            getText="";
-            // setTimeout(hide,feedwords.length * 3000);
-        }
+          }
+        });
       }
-    });
-  }
+
   });
   if(window.addEventListener)
 		document.addEventListener('DOMMouseScroll', hide, false);
