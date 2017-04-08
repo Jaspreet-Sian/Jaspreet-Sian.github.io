@@ -4,6 +4,7 @@ inputPdf.addEventListener('change', function( event ){
   // if(window.location = '#viewer-div'){
   //   window.location= '';
   // }
+  // $('#viewer-div').addClass('hidden');
   console.log("file changed");
   var fileName = '';
   // if( this.files && this.files.length > 1 ){
@@ -37,7 +38,7 @@ viewBtn.addEventListener('click', function(event){
   // console.log(window.filePath,"filePath");
   // $('.span-msg').removeClass('hidden');
   if(fileName){
-    $('#viewer-div').removeClass('hidden');
+    // $('#viewer-div').removeClass('hidden');
     // window.location = 'web/viewer.html?file=%2F'+filePath;
     // window.location = '#viewer-div';
   }
