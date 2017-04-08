@@ -12,8 +12,8 @@ inputPdf.addEventListener('change', function( event ){
   // else{
     fileName = event.target.value;
     console.log(fileName,"fileName changed");
-    filePath= URL.createObjectURL(event.target.files[0]);
-    console.log(filePath,"filePath chnaged");
+    // filePath= URL.createObjectURL(event.target.files[0]);
+    // console.log(filePath,"filePath chnaged");
     if( fileName ){
       $('.fileName').text(fileName);
     }
@@ -34,7 +34,7 @@ viewBtn.addEventListener('click', function(event){
   event.preventDefault();
   console.log("view");
   let fileName= document.getElementById('input-pdf').value;
-  console.log(window.filePath,"filePath");
+  // console.log(window.filePath,"filePath");
   // $('.span-msg').removeClass('hidden');
   if(fileName){
     $('#viewer-div').removeClass('hidden');
