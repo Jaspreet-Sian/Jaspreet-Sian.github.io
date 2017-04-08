@@ -1,6 +1,9 @@
 var inputPdf= document.getElementById('input-pdf');
 var filePath = '';
 inputPdf.addEventListener('change', function( event ){
+  // if(window.location = '#viewer-div'){
+  //   window.location= '';
+  // }
   console.log("file changed");
   var fileName = '';
   // if( this.files && this.files.length > 1 ){
@@ -28,14 +31,18 @@ inputPdf.addEventListener('blur', function(event){
 var viewBtn= document.getElementById('view-btn');
 // console.log(viewBtn,"vv");
 viewBtn.addEventListener('click', function(event){
+  event.preventDefault();
   console.log("view");
   let fileName= document.getElementById('input-pdf').value;
   console.log(window.filePath,"filePath");
   // $('.span-msg').removeClass('hidden');
   if(fileName){
-    window.location = 'web/viewer.html?file=%2F'+filePath;
+    $('#viewer-div').removeClass('hidden');
+    // window.location = 'web/viewer.html?file=%2F'+filePath;
+    // window.location = '#viewer-div';
   }
   else {
+    $('#viewer-div').addClass('hidden');
     alert("Please Choose File");
   }
 });
