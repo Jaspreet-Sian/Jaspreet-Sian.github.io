@@ -33,7 +33,7 @@ var viewBtn= document.getElementById('view-btn');
 // console.log(viewBtn,"vv");
 viewBtn.addEventListener('click', function(event){
   event.preventDefault();
-  $('#pdf-viewer').removeClass('hidden');
+  // $('#pdf-viewer').removeClass('hidden');
   console.log("view");
   let fileName= document.getElementById('input-pdf').value;
   // console.log(window.filePath,"filePath");
