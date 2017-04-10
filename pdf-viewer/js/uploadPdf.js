@@ -13,10 +13,10 @@ inputPdf.addEventListener('change', function( event ){
   // }
   // else{
     fileName = event.target.value;
-    var blob = new Blob([screen.WebReportsPdfFilesStream.selectedItem.Pdf], { type: "application/pdf;base64" });
-    url = URL.createObjectURL(blob);
+    // var blob = new Blob([screen.WebReportsPdfFilesStream.selectedItem.Pdf], { type: "application/pdf;base64" });
+    // url = URL.createObjectURL(blob);
     console.log(fileName,"fileName changed");
-    // filePath= URL.createObjectURL(event.target.files[0]);
+    filePath= URL.createObjectURL(event.target.files[0]);
     // console.log(filePath,"filePath chnaged");
     if( fileName ){
       $('.fileName').text(fileName);
@@ -56,8 +56,9 @@ console.log(upldBtn,"uuu");
 upldBtn.addEventListener('click', function(event){
   console.log("upload");
 
-
-var viewerUrl = 'web/viewer.html?file=' + encodeURIComponent(url);
+  event.preventDefault();
+// var viewerUrl = 'web/viewer.html?file=' + encodeURIComponent(filePath);
+ // window.location = viewerUrl;
   // $('.span-msg').removeClass('hidden');
 });
 

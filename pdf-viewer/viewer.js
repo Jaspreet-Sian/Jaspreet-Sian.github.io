@@ -1217,6 +1217,7 @@ function configure(PDFJS) {
   PDFJS.imageResourcesPath = './images/';
   PDFJS.workerSrc = '../build/pdf.worker.js';
   PDFJS.cMapUrl = '../web/cmaps/';
+  PDFJS.cMapUrl = '../pdf-viewer/cmaps/';
   PDFJS.cMapPacked = true;
 }
 var DefaultExernalServices = {
