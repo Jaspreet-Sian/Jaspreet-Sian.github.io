@@ -44,6 +44,8 @@ viewBtn.addEventListener('click', function(event){
   if(fileName){
     // window.location = 'web/viewer.html?file=%2F'+filePath;
     // window.location = '#viewer-div';
+      var viewerUrl = 'viewer.html?file=' + encodeURIComponent(filePath);
+      window.location = viewerUrl;
   }
   else {
     $('#viewer-div').addClass('hidden');
@@ -56,9 +58,6 @@ console.log(upldBtn,"uuu");
 upldBtn.addEventListener('click', function(event){
   console.log("upload");
 
-  event.preventDefault();
-// var viewerUrl = 'web/viewer.html?file=' + encodeURIComponent(filePath);
- // window.location = viewerUrl;
   // $('.span-msg').removeClass('hidden');
 });
 
