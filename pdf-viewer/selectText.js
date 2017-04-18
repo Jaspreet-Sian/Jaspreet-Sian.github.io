@@ -2,7 +2,7 @@
 $(function(){
   var definition="";
   var tooltipDiv= $("#tooltipDiv");
-  var meaningTip= new Opentip(tooltipDiv,"abc" ,{showOn: null,
+  var meaningTip= new Opentip(tooltipDiv ,{showOn: null,
                                            style: 'dark',
                                            hideTrigger: 'closeButton',
                                            hideDelay: 0.9,
