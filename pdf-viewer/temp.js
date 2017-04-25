@@ -164,3 +164,16 @@ $(function(){
     }
   });
 });
+
+Opentip.styles.myErrorStyle = {
+  extend : 'alert',
+  target: true,
+  fixed: false,
+  stem: true,
+  hideTrigger : 'closeButton'
+};
+var notFoundTip= new Opentip(tooltipDiv, {style : myErrorStyle});
+
+notFoundTip.hide();
+notFoundTip.setContent(definition);
+notFoundTip.show();

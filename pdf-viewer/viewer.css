@@ -12,6 +12,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ .tooltip-options{
+   text-decoration: none;
+   color: #666666;
+   font-size: 14px;
+   background-color: #F2EBEB;
+   padding: 0.6rem;
+   margin-left: -4px;
+   border-left: 1px solid #C0C0C0;
+   border-right: 1px solid #C0C0C0;
+   box-shadow: 5px 5px 5px #888888
+ }
+ #tooltip-menu {
+   width: 240px;
+   position: absolute;
+   color: white;
+   background-color: #FAFAFA;
+   /*padding: 1rem;*/
+   z-index: 10;
+   display: none;
+ }
 
 .textLayer {
   position: absolute;

@@ -1,6 +1,7 @@
 var inputPdf= document.getElementById('input-pdf');
 var filePath = '';
 var url ;
+// var Blob= require('Blob');
 inputPdf.addEventListener('change', function( event ){
   // if(window.location = '#viewer-div'){
   //   window.location= '';
@@ -12,11 +13,12 @@ inputPdf.addEventListener('change', function( event ){
   //   fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
   // }
   // else{
-    fileName = event.target.value;
+    fileName = event.target.files[0].name;
     // var blob = new Blob([screen.WebReportsPdfFilesStream.selectedItem.Pdf], { type: "application/pdf;base64" });
     // url = URL.createObjectURL(blob);
     console.log(fileName,"fileName changed");
-    filePath= URL.createObjectURL(event.target.files[0]);
+    window.URL= window.URL || window.webkitURL;
+    filePath= window.URL.createObjectURL(event.target.files[0]);
     // console.log(filePath,"filePath chnaged");
     if( fileName ){
       $('.fileName').text(fileName);

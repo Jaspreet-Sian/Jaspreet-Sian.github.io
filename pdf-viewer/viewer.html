@@ -30,20 +30,23 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 
     <link rel="stylesheet" href="viewer.css">
+    <link rel="stylesheet" href="css/opentip.css">
 
 
 
 
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="locale/locale.properties">
-<script src="l10n.js"></script>
-<script src="../build/pdf.js"></script>
 
+<script src="js/Blob.js"></script>
     <script src="js/jquery.js" type="text/javascript"></script>
+
+    <script src="../build/pdf.js"></script>
+    <script src="l10n.js"></script>
     <script src="viewer.js"></script>
-    <script src="selectText.js" type="text/javascript"></script>
+
     <script src="js/opentip-jquery.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="css/opentip.css">
+    <script src="selectText.js" type="text/javascript"></script>
   </head>
 
   <body tabindex="1" class="loadingInProgress">
@@ -362,5 +365,11 @@ See https://github.com/adobe-type-tools/cmap-resources
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
 
+    <div id="tooltip-menu">
+      <a href="#" id="definition" class="tooltip-options">Definition</a>
+      <a href="#" id="nlp" class="tooltip-options">NLP</a>
+      <a href="#" id="annotate" class="tooltip-options">Annotate</a>
+      <a href="#" id="sound" class="tooltip-options">Sound</a>
+</div>
   </body>
 </html>

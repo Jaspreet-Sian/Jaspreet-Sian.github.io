@@ -1,14 +1,79 @@
 
 $(function(){
+  var cr;
   var definition="";
   var tooltipDiv= $("#tooltipDiv");
   var meaningTip= new Opentip(tooltipDiv ,{showOn: null,
                                            style: 'dark',
                                            hideTrigger: 'closeButton',
-                                           hideDelay: 0.9,
                                            fixed: false,
-                                           shadow: true});
-document.addEventListener("selectionchange", function() {
+                                           shadow: true,
+                                           shadowBlur: 11,
+                                           shadowColor: 'rgb(169,169,169)'
+                                       });
+  $(window).on({
+    'click' : function(){
+      meaningTip.hide();
+      $('#tooltip-menu').hide();
+    }
+  });
+  $(document).on({
+     'mouseup': function() {
+        cr= window.getSelection().getRangeAt(0).getClientRects();
+        $('#tooltip-menu').hide();
+       },
+       'mousemove': function(ev) {
+         for(var i = 0 ; i < cr.length ; i++) {
+          if(ev.pageX >= cr[i].left && ev.pageX <= cr[i].right &&
+              ev.pageY >= cr[i].top  && ev.pageY <= cr[i].bottom
+           ) {
+                  if(cr[i].top > 70){
+                        $('#tooltip-menu')
+                             .css({
+                                   top: cr[0].top-$('#tooltip-menu').outerHeight()-8
+                                 });
+                  }
+                  else {
+                    $('#tooltip-menu')
+                         .css({
+                               top: cr[0].bottom + 2,
+                              });
+                  }
+                  if(cr[i].right >= (screen.width - 130)){
+                    $('#tooltip-menu')
+                         .css({
+                               right: 5,
+                               left: ''
+                             });
+                  }
+                  else if(cr[i].left <= 130 ) {
+                    $('#tooltip-menu')
+                         .css({
+                                right: '',
+                                left: cr[0].left
+                             });
+                  }
+                  else {
+                   let calc = parseInt(cr[0].left + cr[0].right)/2 - 120;
+                   $('#tooltip-menu')
+                         .css({
+                                left: calc,
+                                right: ''
+                             });
+                  }
+                  $('#tooltip-menu').show();
+                     break;
+
+            }
+
+          }
+          cr="";
+      }
+    });
+
+var definitionBtn= document.getElementById('definition');
+definitionBtn.addEventListener("click", function() {
+  $('#tooltip-menu').hide();
 //   console.log('Selection changed.');
 // });
 //   $('#viewerContainer').bind('mouseup', function(e){
@@ -34,10 +99,13 @@ document.addEventListener("selectionchange", function() {
                   // Assuming json data is wrapped in square brackets as Drew suggests
                   console.log(feedwords[i]);
                   if(jsonresponse[feedwords[i]]){
+                    meaningTip.style= 'dark';
                     definition +="<h3> Meaning of "+ getWords[i] + ":</h3> <p>" + jsonresponse[feedwords[i]] + "</p><br>";
                   }
                   else {
-                    definition +="<h3> Meaning of "+ getWords[i] + ":</h3><p style='color : rgb(255,0,0);'>we are unable to find definition of such word you have selected, Make sure your selected word is a proper word! <p><br>";
+                    // definition +="<h3> Meaning of "+ getWords[i] + ":</h3><p style='color : rgb(255,0,0);'>we are unable to find definition of such word you have selected, Make sure your selected word is a proper word! <p><br>";
+                    meaningTip.style= 'alert';
+                    definition +="<h3> Meaning of "+ getWords[i] + ":</h3><p style='color: rgb(255,0,0);'>we are unable to find definition of such word you have selected, Make sure your selected word is a proper word! <p><br>";
                   }
                 }
                 console.log(definition,"definition");
@@ -46,7 +114,7 @@ document.addEventListener("selectionchange", function() {
                 definition="";
                 feedText="";
                 getText="";
-                // setTimeout(hide,feedwords.length * 3000);
+                setTimeout(hide,feedwords.length * 4000);
             }
           }
         });
@@ -63,6 +131,7 @@ document.addEventListener("selectionchange", function() {
   // });
   function hide(){
     meaningTip.hide();
+    $('#tooltip-menu').hide();
   }
 });
 
