@@ -23,6 +23,7 @@ $(function(){
         $('#tooltip-menu').hide();
        },
        'mousemove': function(ev) {
+         if(cr){
          for(var i = 0 ; i < cr.length ; i++) {
           if(ev.pageX >= cr[i].left && ev.pageX <= cr[i].right &&
               ev.pageY >= cr[i].top  && ev.pageY <= cr[i].bottom
@@ -68,6 +69,7 @@ $(function(){
 
           }
           cr="";
+        }
       }
     });
 

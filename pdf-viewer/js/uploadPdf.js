@@ -1,6 +1,6 @@
 var inputPdf= document.getElementById('input-pdf');
 var filePath = '';
-var url ;
+var url, file ;
 // var Blob= require('Blob');
 inputPdf.addEventListener('change', function( event ){
   // if(window.location = '#viewer-div'){
@@ -14,12 +14,14 @@ inputPdf.addEventListener('change', function( event ){
   // }
   // else{
     fileName = event.target.files[0].name;
+    file = event.target.files[0];
     // var blob = new Blob([screen.WebReportsPdfFilesStream.selectedItem.Pdf], { type: "application/pdf;base64" });
     // url = URL.createObjectURL(blob);
     console.log(fileName,"fileName changed");
     window.URL= window.URL || window.webkitURL;
     filePath= window.URL.createObjectURL(event.target.files[0]);
     // console.log(filePath,"filePath chnaged");
+
     if( fileName ){
       $('.fileName').text(fileName);
     }
@@ -46,6 +48,7 @@ viewBtn.addEventListener('click', function(event){
   if(fileName){
     // window.location = 'web/viewer.html?file=%2F'+filePath;
     // window.location = '#viewer-div';
+
       var viewerUrl = 'viewer.html?file=' + encodeURIComponent(filePath);
       window.location = viewerUrl;
   }

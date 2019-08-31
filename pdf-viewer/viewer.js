@@ -2171,6 +2171,7 @@ webViewerOpenFileViaURL = function webViewerOpenFileViaURL(file) {
     PDFViewerApplication.setTitleUsingUrl(file);
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
+      console.log("xml request open");
       PDFViewerApplication.open(new Uint8Array(xhr.response));
     };
     try {
@@ -2183,7 +2184,16 @@ webViewerOpenFileViaURL = function webViewerOpenFileViaURL(file) {
     return;
   }
   if (file) {
-    PDFViewerApplication.open(file);
+    console.log("file open");
+    if(PDFViewerApplication.open(file)){
+      console.log("file loaded successfully");
+    }
+    else{
+      console.log("there is error");
+        console.log("created url open file");
+        let file= window.location.href.split("file=");
+        PDFViewerApplication.open(URL.createObjectURL(file));
+    }
   }
 };
 function webViewerPageRendered(e) {
@@ -2307,12 +2317,14 @@ var webViewerFileInputChange;
 webViewerFileInputChange = function webViewerFileInputChange(e) {
   var file = e.fileInput.files[0];
   if (!pdfjsLib.PDFJS.disableCreateObjectURL && typeof URL !== 'undefined' && URL.createObjectURL) {
+    console.log("created url open");
     PDFViewerApplication.open(URL.createObjectURL(file));
   } else {
     var fileReader = new FileReader();
     fileReader.onload = function webViewerChangeFileReaderOnload(evt) {
       var buffer = evt.target.result;
       var uint8Array = new Uint8Array(buffer);
+      console.log("file reader open");
       PDFViewerApplication.open(uint8Array);
     };
     fileReader.readAsArrayBuffer(file);

@@ -1,0 +1,104 @@
+
+#img{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	height: 45px;
+	width: 50px;
+}
+#n{
+	width: 752px;
+
+}
+#nav{
+	background-color: #192262;
+	height: 80px;
+}
+#nav1{
+	padding-top: 20px;
+	padding-bottom: 25px;
+	font-size: 28px;
+}
+#nav1 li a{
+	color: #f7f8fb;
+}
+#box{
+	background-color: #ebedf5;
+}
+#h1{
+	text-align: center;
+}
+
+#r{
+	background-color: #f6edf3;
+	text-align: center;
+	width: 750px;
+
+}
+#exampleInputName{
+	height: 50px;
+	margin-left: 20px;
+}
+#exampleInputEmail{
+	height: 50px;
+	margin-left: 20px;
+}
+#exampleInputPassword{
+	height: 50px;
+	margin-left: 32px;
+
+}
+#fb{
+	text-align: right;
+}
+#button_edit{
+	background-color: #67ae55;
+	color: #fff;
+}
+#f{
+	height: 32px;
+	width: 35px;
+
+}
+#gg{
+	height: 26px;
+	width: 33px;
+}
+#btn1{
+	color: #f1f7f3;
+	background-color: #10b446;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 20px;
+
+}
+#btn1:hover{
+	color: #A80231;
+}
+
+#b{
+	text-align: right;
+	margin-left: 30px;
+}
+
+#btn3{
+	color: #f1f7f3;
+	background-color: #ee5567;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-left: 90px;
+
+}
+#btn2{
+
+	color: #f1f7f3;
+	background-color: #342190;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	margin-left: 90px;
+
+}
+
+
+
+
+
