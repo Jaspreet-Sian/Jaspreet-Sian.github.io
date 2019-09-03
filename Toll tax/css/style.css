@@ -533,6 +533,18 @@ p a:hover {
 	margin: 0 0 18px;
 	padding: 0 4px;
 }
+.message input[type='email'] {
+	height: 24px;
+	width: 590px;
+	margin: 0 0 18px;
+	padding: 0 4px;
+}
+.message input[type='password'] {
+	height: 24px;
+	width: 590px;
+	margin: 0 0 18px;
+	padding: 0 4px;
+}
 .message textarea {
 	height: 110px;
 	width: 590px;
