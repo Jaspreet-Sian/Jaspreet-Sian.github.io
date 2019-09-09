@@ -41,52 +41,86 @@
 	</div>
 	<div id="contents">
 		<div class="clearfix">
-			<div class="sidebar">
-				<div>
-					<h2>Contact Info</h2>
-					<ul class="contact">
-						<li>
-							<p>
-								<span class="home"></span> <em>Manes Winchester<br> Family Law Firm</em> the address city, state 1111
-							</p>
-						</li>
-						<li>
-							<p class="phone">
-								Phone: (+20) 000 222 999
-							</p>
-						</li>
-						<li>
-							<p class="fax">
-								Fax: (+20) 000 222 988
-							</p>
-						</li>
-						<li>
-							<p class="mail">
-								Email: info@freewebsitetemplates.com
-							</p>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="main">
+			<div class="main" style="width: auto;">
 				<h1>Registration</h1>
 				<h2 align='justify'>Register yourself to take benefit of online toll payment system</h2>
 				<p align='justify'>
 					Before login, you must need to register yourself in Online Toll Payment System. While registration, a necessary information must be provided by users that helps to pay toll tax without wasting time. Once user enter information, all services can be accessed directly. <br /><strong>Note: All fields are mendatory*</strong>
 				</p>
 				<form action="index.html" method="post" class="message">
+					<p class="tagged_text">Personal Information</p>
+					<label>User ID</label>
+					<input type="text" id="userID" name="userID" value="" placeholder="User1">
 					<label>First Name</label>
-					<input type="text" value="" placeholder="Sohan">
+					<input type="text" id="fname" name="fname" value="" placeholder="Sohan">
 					<label>Middle Name</label>
-					<input type="text" value="" placeholder="Singh">
+					<input type="text" id="mname" name="mname" value="" placeholder="Singh">
 					<label>Last Name</label>
-					<input type="text" value="" placeholder="Chapra">
+					<input type="text" id="lname" name="lname" value="" placeholder="Chapra">
+					<label>Father Name</label>
+					<input type="text" id="fathername" name="fathername" value="" placeholder="Simarjit Singh">
+					<label>Age</label>
+					<input type="number" id="age" name="age" min="1" max="65">
+					<label>Date Of Birth</label>
+					<input type="date" id="dob" name="dob" value="" max="1979-12-31" min="2019-09-30">
+					<label>Phone Number</label>
+					<input type="text" id="phoneNo" name="phoneNo" value="" placeholder="328947429">
+					<label>Mobile Number</label>
+					<input type="text" id="mobileNo" name="mobileNo" value="" placeholder="23423444"><br>
+					<div class="gender" style="width: 600px;">
+						<input type="radio" id="gender" name="gender" value="male" checked style="margin-left: 100px;"> Male
+						<input type="radio" id="gender" name="gender" value="female" style="margin-left: 100px;"> Female
+						<input type="radio" id="gender" name="gender" value="other" style="margin-left: 100px;"> Other
+				</div>
 					<label>Email Address</label>
-					<input type="email" value="" placeholder="sohanchapra@gmail.com">
+					<input type="email" id="email" name="email" value="" placeholder="sohanchapra@gmail.com">
 					<label>Password</label>
-					<input type="password" value="" placeholder="12345678">
-					<label>Message</label>
-					<textarea></textarea>
+					<input type="password" id="password" name="password" value="" placeholder="12345678">
+
+					<p class="tagged_text">Contact Address</p>
+					<label>House Number</label>
+					<input type="text" id="houseNo" name="houseNo" value="" placeholder="C-49">
+					<label>Town/Village Name</label>
+					<input type="text" id="tvname" name="tvname" value="" placeholder="Khanna">
+					<label>City</label>
+					<input type="text" id="city" name="city" value="" placeholder="Ludhiana">
+					<label>State</label>
+					<input type="text" id="state" name="state" value="" placeholder="Punjab">
+					<label>Country</label>
+					<input type="text" id="country" name="country" value="" placeholder="India">
+					<label>Pin Code</label>
+					<input type="text" id="pincode" name="pincode" value="" placeholder="141142">
+					<label>Tehsil</label>
+					<input type="text" id="tehsil" name="tehsil" value="" placeholder="Ludhiana">
+					<p class="tagged_text">Vehicle Information</p>
+					<label>RC Number</label>
+					<input type="text" id="rcno" name="rcno" value="" placeholder="23435">
+					<label>Type of Vehicle</label>
+					<select>
+						<option value="select" disabled selected>--select--</option>
+  					<option value="Two Wheeler">Two Wheeler</option>
+  					<option value="Four Wheeler">Four Wheeler</option>
+  					<option value="Six Wheeler">Six Wheeler</option>
+						<option value="Eight Wheeler">Eight Wheeler</option>
+						<option value="Sixteen Wheeler">Sixteen Wheeler</option>
+  					<option value="Eighteen Wheeler">Eighteen Wheeler</option>
+					</select>
+					<label>Type of Use</label>
+					<select>
+						<option value="select" disabled selected>--select--</option>
+					  <option value="volvo">Volvo</option>
+					  <option value="saab">Saab</option>
+					  <option value="mercedes">Mercedes</option>
+					  <option value="audi">Audi</option>
+					</select>
+					<label>Vehicle Color</label>
+					<input type="text" id="vcolor" name="vcolor" value="" placeholder="Green">
+					<label>Vehicle Make</label>
+					<input type="text" id="vmake" name="vmake" value="" placeholder="Mahindra">
+					<label>Chasis Number</label>
+					<input type="text" id="cno" name="cno" value="" placeholder="C232">
+					<label>Engine Number</label>
+					<input type="text" id="eno" name="eno" value="" placeholder="E9692"><br>
 					<input type="submit" value="Register">
 				</form>
 			</div>

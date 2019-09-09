@@ -215,6 +215,11 @@ p a {
 p a:hover {
 	color: #333333;
 }
+.tagged_text{
+	background-color: #57604e;
+  color: #ffffff;
+  padding: 6px;
+}
 /** Adbox **/
 #adbox {
 	background: url(../images/bg-adbox.png) no-repeat center bottom;
@@ -532,6 +537,36 @@ p a:hover {
 	width: 590px;
 	margin: 0 0 18px;
 	padding: 0 4px;
+}
+.message input[type='date'] {
+	height: 24px;
+	width: 590px;
+	margin: 0 0 18px;
+	padding: 0 4px;
+	color: #777474;
+}
+.message input[type='tel'] {
+	height: 24px;
+	width: 590px;
+	margin: 0 0 18px;
+	padding: 0 4px;
+}
+.message input[type='number'], select {
+	height: 24px;
+	width: 590px;
+	margin: 0 0 18px;
+	padding: 0 4px;
+}
+select{
+	background-color: #ffffff;
+  width: 600px;
+  height: 30px;
+}
+radio{
+	color: #626262;
+}
+.gender{
+	color: #626262;
 }
 .message input[type='email'] {
 	height: 24px;
