@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Log In - Toll Payment System</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="header">
+		<div class="clearfix">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="LOGO" height="52" width="312"></a>
+			</div>
+			<ul class="navigation">
+				<li class="active">
+					<a href="index.html">Home</a>
+				</li>
+				<li>
+					<a href="addVehicle.html">Add Vehicle</a>
+				</li>
+				<li>
+					<a href="payment.html">Pay Tax</a>
+				</li>
+				<li>
+					<a href="changeProfile.html">Edit Profile</a>
+				</li>
+				<li class="active">
+					<a href="viewMap.html">View Map</a>
+				</li>
+				<li>
+					<a href="info1.html">Info</a>
+					<div>
+						<a href="instructions1.html">Instructions</a>
+					</div>
+				</li>
+				<li>
+					<a href="logout.html">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="contents">
+		<div class="clearfix">
+			<div class="sidebar">
+				<div>
+					<h2 align="center">Welcome Sohan</h2>
+					<ul class="">
+						<li>
+							<img src="images/male.png" width="150px" height="150px" alt="" style="margin: 0 auto;">
+						</li>
+						<li class="sidelink" align="center">
+							<a href="#"> View Payment Details </a>
+						</li>
+						<li class="sidelink" align="center">
+							<a href="#"> View Vehicle Details </a>
+						</li>
+						<li class="sidelink" align="center">
+							<a href="#"> Edit Vehicle Details </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main">
+        <form action="userProfile.html" method="post" class="message">
+					<p class="tagged_text">Vehicle Information</p>
+					<label>RC Number</label>
+					<input type="text" id="rcno" name="rcno" value="" placeholder="23435">
+					<label>Type of Vehicle</label>
+					<select>
+						<option value="select" disabled selected>--select--</option>
+  					<option value="Two Wheeler">Two Wheeler</option>
+  					<option value="Four Wheeler">Four Wheeler</option>
+  					<option value="Six Wheeler">Six Wheeler</option>
+						<option value="Eight Wheeler">Eight Wheeler</option>
+						<option value="Sixteen Wheeler">Sixteen Wheeler</option>
+  					<option value="Eighteen Wheeler">Eighteen Wheeler</option>
+					</select>
+					<label>Type of Use</label>
+					<select>
+						<option value="select" disabled selected>--select--</option>
+					  <option value="volvo">Volvo</option>
+					  <option value="saab">Saab</option>
+					  <option value="mercedes">Mercedes</option>
+					  <option value="audi">Audi</option>
+					</select>
+					<label>Vehicle Color</label>
+					<input type="text" id="vcolor" name="vcolor" value="" placeholder="Green">
+					<label>Vehicle Make</label>
+					<input type="text" id="vmake" name="vmake" value="" placeholder="Mahindra">
+					<label>Chasis Number</label>
+					<input type="text" id="cno" name="cno" value="" placeholder="C232">
+					<label>Engine Number</label>
+					<input type="text" id="eno" name="eno" value="" placeholder="E9692"><br>
+					<input type="submit" value="Add Vehicle Detail">
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -556,6 +556,7 @@ p a:hover {
 	width: 590px;
 	margin: 0 0 18px;
 	padding: 0 4px;
+	color: #626262;
 }
 select{
 	background-color: #ffffff;
@@ -592,6 +593,23 @@ radio{
 	cursor: pointer;
 	border: none;
 }
+
+.sidelink a{
+	color: #626262;
+}
+.vehicleList{
+	padding: 20px;
+	background-color: #57604e;
+}
+.vehicleList li{
+	list-style: none;
+ 	padding: 0;
+}
+.vehicleList li a{
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 2rem;
+ }
 /*------------ FOOTER ------------*/
 #footer {
 	background: #d9d9d9 url(../images/bg-footer.png) repeat-x left top;
