@@ -1,0 +1,489 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+// variables
+// ------------------------
+
+
+// Global
+// ------------------------
+* {
+	box-sizing: border-box
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dcb;
+    color: #a66;
+    font-family: "Quicksand", sans-serif;
+    font-size: 0.85em;
+    font-weight: 500;
+    flex-flow: row wrap;
+        flex-direction: row;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 2em;
+    text-align: center;
+}
+.header-title {
+	font-size: 3.5em;
+	letter-spacing: .025em;
+	margin-bottom: .75em;
+	margin: 0 1em 1em;
+	text-align: center;
+	text-transform: uppercase;
+}
+.header-title .subtitle {
+	font-size: .4em;
+	font-weight: 400;
+	display: block;
+	text-transform: none;
+}
+.icon-wrap {
+	height: 30em;
+	width: 25em;
+	border-radius: 60% 60% 0 0%;
+	border: 6px solid #dcb;
+	background: linear-gradient(150deg, #81cdd5, #328895);
+	box-shadow: inset 0 0 5px rgba(#222, .3);
+	min-width: 14em;
+	overflow: hidden;
+	position: relative;
+	transition: border-color .2s;
+}
+.windows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+}
+.windows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    min-height: 15em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.windows .icon-label {
+    -webkit-animation: showup 0.3s forwards;
+    animation: showup 0.3s forwards;
+    min-width: 15em;
+}
+.head {
+    height: 5.75em;
+    width: 6em;
+    position: absolute;
+    top: 210px;
+    left: 245px;
+    right: 10%;
+    bottom: auto;
+    background: #fff;
+    border-radius: 80% 50% 0% 60%;
+    box-shadow: -1px 2px 2px rgba(34, 34, 34, 0.1);
+    transform: rotate(15deg);
+}
+
+.head::after, .head::before {
+
+    height: 2em;
+    width: 5.3em;
+    position: absolute;
+    top: 17%;
+    left: 1.1em;
+    right: auto;
+    bottom: auto;
+    background: #fff;
+    border-radius: 90% 0;
+    content: "";
+    z-index: -1;
+    transform-origin: 0 100%;
+
+}
+.head::after {
+    transform: rotate(14deg) translate(0.075em, -0.15em);
+}
+.hair {
+    height: 3em;
+    width: 5.8em;
+    position: absolute;
+    top: 13%;
+    left: 0.3em;
+    right: auto;
+    bottom: auto;
+    background: #222222;
+    border-radius: 100% 0%;
+    transform-origin: 0 100%;
+    transform: rotate(-15deg);
+}
+
+.hair::before {
+
+    height: 2.2em;
+    width: 6.2em;
+    transform: rotate(0deg);
+
+}
+.hair::after {
+    height: 2em;
+    width: 5em;
+    transform: rotate(-20deg);
+}
+.hair::after, .hair::before {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    background: #222222;
+    border-radius: 60% 0% 90%;
+    content: "";
+    transform-origin: 0 100%;
+}
+.cheek {
+    height: 2em;
+    width: 6.5em;
+    position: absolute;
+    top: 65%;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    background: #222222;
+    border-radius: 0 5% 0 100%;
+    transform: translate(0.25em, -0.25em) rotate(0deg);
+    transform-origin: 0 0;
+}
+.cheek::before {
+    height: 1.5em;
+    width: 4.3em;
+    position: absolute;
+    top: -0.75em;
+    left: auto;
+    right: -0.25em;
+    bottom: auto;
+    background: #222222;
+    border-radius: 90% 0;
+    content: "";
+    transform: rotate(5deg);
+}
+.cheek::after {
+    height: 1.25em;
+    width: 1.5em;
+    position: absolute;
+    top: 0;
+    left: 3em;
+    right: auto;
+    bottom: auto;
+    background: #ffc3a7;
+    border-radius: 90% 0;
+    content: "";
+    transform-origin: 0 0;
+    transform: rotate(30deg);
+}
+.beak {
+    height: 0.85em;
+    width: 3em;
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 90%;
+    bottom: auto;
+    background: #222222;
+    border-left: 0.2em solid rgba(255, 255, 255, 0.3);
+    border-radius: 200% 0 5% 5%;
+    z-index: 2;
+}
+.beak::before {
+    height: 0.3em;
+    width: 0.3em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #EEE;
+    border-radius: 80% 0;
+    content: "";
+}
+
+.bird.chinese-bulbul .beak::after {
+
+    margin-top: -0.05em;
+
+}
+.beak::after {
+    height: 0.35em;
+    width: 110%;
+    position: absolute;
+    top: 80%;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    background: #2c2c2c;
+    border-radius: 100% 0 0 0;
+    box-sizing: border-box;
+    content: "";
+    transform: translateX(0.15em) rotate(7deg);
+    z-index: -2;
+}
+.eye {
+    height: 1.75em;
+    width: 1.75em;
+    position: absolute;
+    top: 45%;
+    left: 1.25em;
+    right: auto;
+    bottom: auto;
+    background: #222;
+    border: 0.2em solid #EEE;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+.eye::after {
+
+    height: 0.3em;
+    width: 0.3em;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    right: auto;
+    bottom: auto;
+    background: #fff;
+    border-radius: 100% 0;
+    content: "";
+
+}
+.chest {
+    height: 8em;
+    width: 8.5em;
+    position: relative;
+    top: 293px;
+    left: 230px;
+    right: auto;
+    bottom: -6.75em;
+    background: linear-gradient(150deg, #222, #526321);
+    border-radius: 80% 50% 0 90%;
+    transform-origin: 0 0;
+    transform: rotate(-10deg);
+}
+.message {
+	position: absolute;
+	top: 150px;
+	width: 200px;
+	font-size: 1.3rem;
+	left: 15px;
+}
+.yes, .no {
+	background: #a66;
+	box-shadow: 0 2px 3px rgba(34, 34, 34, 0.3);
+	border-radius: 3em;
+	padding: 15px 30px;
+}
+@keyframes showup {
+	0% {
+		opacity: 0;
+	   }
+	100% {
+		opacity: 1;
+        }
+}
+.icon-label {
+    position: relative;
+}
+
+.icon-wrap {
+	border-color: #EEE;
+}
+.title .cloud{
+	transform: translate(0, 0);
+}
+.bird {
+	transition: transform .3s;
+	transform: translateY(0);
+}
+
+.cloud {
+    height: 0.75em;
+    width: 3.5em;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    background: #fff;
+    border-radius: 3em;
+    box-shadow: 0 2px 2px rgba(34, 34, 34, 0.2);
+    transform: translate(9em, 1em);
+    transition: transform 0.5s;
+}
+	
+.cloud::before, .cloud::after {
+    height: 1.5em;
+    width: 1.5em;
+    position: absolute;
+    top: auot;
+    left: 5%;
+    right: auto;
+    bottom: 0.25em;
+    background: #fff;
+    border-radius: 100%;
+    content: "";
+}
+
+.cloud::after {
+    height: 1em;
+    width: 1em;
+    position: absolute;
+    top: auot;
+    left: 40%;
+    right: auto;
+    bottom: 0.2em;
+}
+.cloud .right{
+	background: #222;
+}
+
+.title {
+    position: absolute;
+    background: #a66;
+    box-shadow: 0 2px 3px rgba(#222, .3);
+    border-radius: 3em;
+    color: #fff;
+    font-size: .8em;
+    letter-spacing: .025em padding: .4em 1em;
+    text-align: center;
+    text-transform: capitalize;
+    user-select: none;
+    width: auto;
+}
+
+.title::before {
+    width: 1em;
+    height: 1.25em;
+    position: absolute;
+    border-left: .75em solid #a66;
+    border-radius: 90% 0 0 0;
+    content: '';
+
+}
+.ref {
+	position: fixed;
+	border-bottom: 2px solid #a66;
+	color: #a66;
+	font-size: 1em;
+	text-decoration: none;
+}
+.ref:hover{
+	transform: scale(1.2);
+	transform-origin: 100% 0;
+	transition: transform .2s;
+}
+// Birds, styles
+.bird {
+	right: 0;
+	overflow: hidden;
+	transform: translateY(110%);
+	transition: transform .5s;
+}
+
+.bird.chinese-bulbul {
+    font-size: 0.95em;
+}
+.beak::after {
+	margin-top: -.05em;
+}
+.black-bulbul, .common-myna {
+	font-size: 1.03em;
+	bottom: -1.2em;
+	right: -1px;
+}
+.sparrow, .white-java {
+	font-size: .9em;
+	bottom: -2em;
+}
+.japanese-white-eye, .gray-cheeked-fulvetta {
+	font-size: .8em;
+	bottom: -1.5em;
+}
+.gray-cheeked-fulvetta .eye .initial {
+	animation: hiding-bird .75s 1s 1 forwards ease-in;
+	transform: translateY(50%);
+}
+.door-lock {
+	cursor: pointer;
+	background: #373736;
+	height: 35px;
+	width: 80px;
+	position: absolute;
+	top: 220px;
+	left: 45px;
+	border-radius: 30px;
+	padding-top: 15px;
+	animation: zoom-in-zoom-out 1s ease infinite;
+}
+.door-lock span {
+	font-size: 12px;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+</style>
+</head>
+<body>
+<div class="header-title">
+	Knock! Knock!
+	<small class="subtitle">Hey Neighbour, Open the Gate!</small>
+</div>
+<div class="windows">
+	<div class="icon-label">
+		<div class="icon-wrap">
+			<div class="door-lock"><span>Click Here!</span></div>
+			<div class="bird chinese-bulbul">
+				<div class="message">
+					<p>I have something for you. Would you like to have it?</p>
+					<button class="yes">Yes</button>
+					<button class="no">No</button>
+				</div>
+				<div class="head">
+					<div class="hair"></div> 
+					<div class="cheek"></div> 
+					<div class="beak"></div> 
+					<div class="eye"></div>
+				</div>
+				<div class="chest"></div>
+			</div>
+		</div> 
+		<div class="cloud"></div>
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   $(document).ready(function(){
+   $(".chinese-bulbul").hide();
+  $(".door-lock").click(function(){
+    $(".door-lock").hide();
+    $(".chinese-bulbul").show();
+  });
+  $(".no").click(function(){
+    $(".chinese-bulbul").hide();
+    $(".door-lock").show();
+  });
+  $(".yes").click(function(){
+  	window.location.href= "wish.html";
+  });
+});
+</script>
+</body>
+</html>
